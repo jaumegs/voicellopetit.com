@@ -1,0 +1,25 @@
+$ORIGIN voicello.es.
+$TTL 3600
+
+; nameservers
+@  3600  IN  SOA  ns31.domaincontrol.com.. dns.hetzner.com. ( 0000000000 8h 2h 1w 1h ) 
+@  3600  IN  NS   ns31.domaincontrol.com..
+@  3600  IN  NS   ns32.domaincontrol.com..
+
+; mail
+@             3600  IN  MX   0 .
+@             3600  IN  TXT  "v=spf1 -all"
+_dmarc        3600  IN  TXT  "v=DMARC1; p=reject; aspf=s; adkim=s;"
+*._domainkey  3600  IN  TXT  "v=DKIM1; p="
+
+; www
+@    3600  IN  CAA    0 issuewild "letsencrypt.org"
+@    3600  IN  A      185.199.108.153
+@    3600  IN  A      185.199.109.153
+@    3600  IN  A      185.199.110.153
+@    3600  IN  A      185.199.111.153
+@    3600  IN  AAAA   2606:50c0:8000::153
+@    3600  IN  AAAA   2606:50c0:8001::153
+@    3600  IN  AAAA   2606:50c0:8002::153
+@    3600  IN  AAAA   2606:50c0:8003::153
+www  3600  IN  CNAME  jaumegs.github.io.
